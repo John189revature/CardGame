@@ -24,9 +24,6 @@ public class UserService{
     public Users getUsername(String name){
         return userRepository.findUsername(name);
     }
-    public Users getAvatarURL(String name){
-        return userRepository.findAvatarURL(name);
-    }
     public Users getPassword(String name){
         return userRepository.findPassword(name);
     }

@@ -18,9 +18,6 @@ public interface UserRepository extends JpaRepository<Users, Integer> {
     @Query("from Users where username = :username")
     Users findUsername(@Param("username") String name);
 
-    @Query("from Users where avatarURL = :avatarurl")
-    Users findAvatarURL(@Param("avatarurl") String name);
-
     @Query("from Users where password = :password")
     Users findPassword(@Param("password") String name);
 

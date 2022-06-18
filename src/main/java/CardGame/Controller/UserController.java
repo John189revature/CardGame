@@ -21,7 +21,6 @@ public class UserController {
     public List<Users> getAllUser(){
         return userService.getAllUser();
     }
-
     @GetMapping("name/{name}")
     public Users getUsername(@PathVariable String name){
         return userService.getUsername(name);
@@ -30,12 +29,6 @@ public class UserController {
     public Users getUserById(@PathVariable int id){
         return userService.getUserById(id);
     }
-
-    @GetMapping("url/{avatarurl}")
-    public Users getAvatarURL(@PathVariable String name){
-        return userService.getAvatarURL(name);
-    }
-
     @GetMapping("password/{password}")
     public Users getPassword(@PathVariable String name){
         return userService.getPassword(name);

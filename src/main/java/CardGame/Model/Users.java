@@ -20,9 +20,5 @@ public class Users {
     @Column
     private String username;
     @Column
-    private String avatarURL;
-    @Column
     private String password;
-    @Column
-    private int tryId;
 }
