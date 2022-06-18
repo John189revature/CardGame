@@ -41,4 +41,11 @@ public class UserController {
     public void createUser(@RequestBody Users u){
         userService.createUser(u);
     }
+    /*
+    @PostMapping("updateUser")
+    public String updateUser(@RequestBody Users u){
+        return userService.changeUserInfo(u);
+    }
+
+     */
 }
