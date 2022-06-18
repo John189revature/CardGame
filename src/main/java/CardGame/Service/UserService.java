@@ -1,7 +1,7 @@
-package Project2.Service;
+package CardGame.Service;
 
-import Project2.DAO.UserRepository;
-import Project2.Model.User;
+import CardGame.DAO.UserRepository;
+import CardGame.Model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,25 +15,25 @@ public class UserService{
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
     }
-    public List<User> getAllUser(){
+    public List<Users> getAllUser(){
         return userRepository.findAll();
     }
-    public User getUserById(int id){
+    public Users getUserById(int id){
         return userRepository.findUserById(id);
     }
-    public User getUsername(String name){
+    public Users getUsername(String name){
         return userRepository.findUsername(name);
     }
-    public User getAvatarURL(String name){
+    public Users getAvatarURL(String name){
         return userRepository.findAvatarURL(name);
     }
-    public User getPassword(String name){
+    public Users getPassword(String name){
         return userRepository.findPassword(name);
     }
-    public User getTryId(int id){
+    public Users getTryId(int id){
         return userRepository.findTryId(id);
     }
-    public void createUser(User u){
+    public void createUser(Users u){
         userRepository.save(u);
     }
 }

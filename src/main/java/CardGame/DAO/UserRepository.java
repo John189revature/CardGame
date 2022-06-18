@@ -1,6 +1,7 @@
-package Project2.DAO;
+package CardGame.DAO;
 
-import Project2.Model.User;
+
+import CardGame.Model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,21 +9,25 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<Users, Integer> {
 
 
     @Query("from Users")
-    User findUserById(@Param("userId") int id);
+    Users findUserById(@Param("userId") int id);
 
     @Query("from Users where username = :username")
-    User findUsername(@Param("username") String name);
+    Users findUsername(@Param("username") String name);
 
     @Query("from Users where avatarURL = :avatarurl")
-    User findAvatarURL(@Param("avatarurl") String name);
+    Users findAvatarURL(@Param("avatarurl") String name);
 
     @Query("from Users where password = :password")
-    User findPassword(@Param("password") String name);
+    Users findPassword(@Param("password") String name);
 
     @Query("from Users where tryId = :tryId")
-    User findTryId(@Param("tryId") int id);
+    Users findTryId(@Param("tryId") int id);
 }
+
+
+
+

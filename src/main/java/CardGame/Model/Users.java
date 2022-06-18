@@ -1,4 +1,4 @@
-package Project2.Model;
+package CardGame.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 @Entity
-public class User {
+public class Users {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
