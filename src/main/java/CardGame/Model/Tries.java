@@ -17,8 +17,9 @@ public class Tries {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int tryId;
-    @Column
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name="user_Id", nullable = false)
+    private Users users;
     @Column
     private tries numberOfTries;
 
