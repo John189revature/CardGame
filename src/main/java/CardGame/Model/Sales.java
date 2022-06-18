@@ -22,8 +22,10 @@ public class Sales {
     @Column
     private Double salesAmount;
     @Column
-    private paymentStatus salesType;
-    
+    private String salesType;
+    @Column
+    private paymentStatus paymentStatus;
+
 
     public enum paymentStatus{
         PENDING,
