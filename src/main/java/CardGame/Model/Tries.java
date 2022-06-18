@@ -20,7 +20,7 @@ public class Tries {
     @Column
     private int userId;
     @Column
-    private int numberOfTries;
+    private tries numberOfTries;
 
     public enum tries{
         ONE,
