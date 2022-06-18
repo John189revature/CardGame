@@ -21,4 +21,10 @@ public class Tries {
     private int userId;
     @Column
     private int numberOfTries;
+
+    public enum tries{
+        ONE,
+        THREE,
+        FIVE
+    }
 }
