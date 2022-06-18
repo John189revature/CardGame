@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("tries")
+@RequestMapping("sales")
 public class SalesController {
     SalesService salesService;
     @Autowired
