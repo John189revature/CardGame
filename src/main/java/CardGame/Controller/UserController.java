@@ -26,8 +26,8 @@ public class UserController {
         return userService.getUsername(name);
     }
     @GetMapping("id/{id}")
-    public Users getUserById(@PathVariable String name){
-        return userService.getUserById(name);
+    public Users getUserById(@PathVariable String id){
+        return userService.getUserById(id);
     }
     @GetMapping("password/{password}")
     public Users getPassword(@PathVariable String name){
