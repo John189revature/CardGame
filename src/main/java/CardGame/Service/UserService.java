@@ -4,6 +4,7 @@ import CardGame.DAO.UserRepository;
 import CardGame.Model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -18,8 +19,8 @@ public class UserService{
     public List<Users> getAllUser(){
         return userRepository.findAll();
     }
-    public Users getUserById(int id){
-        return userRepository.findUserById(id);
+    public Users getUserById(String name){
+        return userRepository.findUserById(name);
     }
     public Users getUsername(String name){
         return userRepository.findUsername(name);
@@ -33,25 +34,30 @@ public class UserService{
     public void createUser(Users u){
         userRepository.save(u);
     }
-    /*
-    public String updateUser(Users u) {
-        Users usersid=userRepository.findUserById(u.getUserId());
-        Users usernameProfile=userRepository.findUsername(u.getUsername());
-        if (usersid!=null){
+    public void update(Users users) {
+        userRepository.save(users);
+    }
+
+/*
+    public String updateUsers(Users users) {
+        Users updateUserID=userRepository.findUserById(users.getUserId());
+        Users emailCheck=userRepository.getUserByEmail(users.getEmail());
+        Users usernameCheck=userRepository.getUserByUsername(users.getUsername());
+        if (updateUserID!=null){
             System.out.println("step1");
-            if (userid!=null&&!=usersid.getUserId()) {
+            if (usernameCheck!=null&&usernameCheck.getUserById()!=updateUserID.getUserById()) {
                 return "User info cannot be updated because username already exists!";
-            }else if(emailCheck!=null&&emailCheck.getUser_id()!=temp.getUser_id()){
-                return "User info cannot be updated.";
-            }else if (usersid.getUserId()==usersid.getUserId()){
-                userRepository.save(usersid);
+            }else if(emailCheck!=null&&emailCheck.getUserById()!=updateUserID.getUserById()){
+                return "User info cannot be updated because the Email already exists for an account. If you own this email, try changing the password.";
+            }else if (updateUserID.getUserById()==users.getUserById()){
+                userRepository.save(users);
                 return "User info successfully updated!";
             }
         }else{
-            return "Could not update the user. Please fill out the form correctly";
+            return "Could not update the users. Please fill out the form correctly";
         }
         return "unknown error";
     }
 
-     */
+ */
 }

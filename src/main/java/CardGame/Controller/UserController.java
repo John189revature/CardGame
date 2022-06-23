@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -26,8 +26,8 @@ public class UserController {
         return userService.getUsername(name);
     }
     @GetMapping("id/{id}")
-    public Users getUserById(@PathVariable int id){
-        return userService.getUserById(id);
+    public Users getUserById(@PathVariable String name){
+        return userService.getUserById(name);
     }
     @GetMapping("password/{password}")
     public Users getPassword(@PathVariable String name){
@@ -41,11 +41,11 @@ public class UserController {
     public void createUser(@RequestBody Users u){
         userService.createUser(u);
     }
-    /*
-    @PostMapping("updateUser")
-    public String updateUser(@RequestBody Users u){
-        return userService.changeUserInfo(u);
+
+    @PostMapping("/updateUser")
+    public Users update(@RequestBody Users users){
+        userService.update(users);
+        return users;
     }
 
-     */
 }
