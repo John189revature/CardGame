@@ -38,26 +38,5 @@ public class UserService{
         userRepository.save(users);
     }
 
-/*
-    public String updateUsers(Users users) {
-        Users updateUserID=userRepository.findUserById(users.getUserId());
-        Users emailCheck=userRepository.getUserByEmail(users.getEmail());
-        Users usernameCheck=userRepository.getUserByUsername(users.getUsername());
-        if (updateUserID!=null){
-            System.out.println("step1");
-            if (usernameCheck!=null&&usernameCheck.getUserById()!=updateUserID.getUserById()) {
-                return "User info cannot be updated because username already exists!";
-            }else if(emailCheck!=null&&emailCheck.getUserById()!=updateUserID.getUserById()){
-                return "User info cannot be updated because the Email already exists for an account. If you own this email, try changing the password.";
-            }else if (updateUserID.getUserById()==users.getUserById()){
-                userRepository.save(users);
-                return "User info successfully updated!";
-            }
-        }else{
-            return "Could not update the users. Please fill out the form correctly";
-        }
-        return "unknown error";
-    }
 
- */
 }
