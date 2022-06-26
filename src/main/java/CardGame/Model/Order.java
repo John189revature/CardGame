@@ -27,4 +27,11 @@ public class Order {
     private int quantity;
     @Column
     private double orderTotal;
+    @Column
+    private orderStatus PaymentStatus;
+
+    public enum orderStatus{
+        PENDING,
+        PURCHASED
+    }
 }
