@@ -1,9 +1,7 @@
 package CardGame.Service;
 
 import CardGame.DAO.OrderRepository;
-import CardGame.DAO.ProductRepository;
-import CardGame.Model.Order;
-import CardGame.Model.Product;
+import CardGame.Model.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,15 +16,15 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public List<Order> getAllOrder() {
+    public List<Orders> getAllOrder() {
         return orderRepository.findAll();
     }
 
-    public void createOrder(Order o) {
+    public void createOrder(Orders o) {
         orderRepository.save(o);
     }
 
-    public void update(Order orders) {
+    public void update(Orders orders) {
         orderRepository.save(orders);
     }
 }

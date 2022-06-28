@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
-public class Order {
+public class Orders {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)

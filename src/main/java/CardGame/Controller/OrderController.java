@@ -1,9 +1,7 @@
 package CardGame.Controller;
 
-import CardGame.Model.Order;
-import CardGame.Model.Product;
+import CardGame.Model.Orders;
 import CardGame.Service.OrderService;
-import CardGame.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,16 +17,16 @@ public class OrderController {
         this.orderService = orderService;
     }
     @GetMapping
-    public List<Order> getAllOrder(){
+    public List<Orders> getAllOrder(){
         return orderService.getAllOrder();
     }
     @PostMapping
-    public void createOrder(@RequestBody Order o){
+    public void createOrder(@RequestBody Orders o){
         orderService.createOrder(o);
     }
 
     @PostMapping("/updateOrder")
-    public Order update(@RequestBody Order order){
+    public Orders update(@RequestBody Orders order){
         orderService.update(order);
         return order;
     }
